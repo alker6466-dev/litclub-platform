@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>LitClub — Клуб</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body data-page="club">
+<header class="header">
+    <div class="logo">
+        <a href="index.html">LitClub</a>
+    </div>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="clubs.html" class="nav-link">Клуби</a>
+        <a href="meeting.html" class="nav-link">Обговорення</a>
+        <a href="profile.html" class="nav-link">Профіль</a>
+        <a href="about.html" class="nav-link">Про платформу</a>
+    </nav>
+</header>
+
+<main class="container">
+    <section id="club-section" class="section">
+        <!-- Вміст клубу заповнюється через JS -->
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="footer-logo">LitClub</div>
+            <nav class="footer-nav">
+                <a href="index.html">Головна</a>
+                <a href="clubs.html">Клуби</a>
+                <a href="meeting.html">Обговорення</a>
+                <a href="about.html">Про платформу</a>
+            </nav>
+        </div>
+
+        <div class="footer-right">
+            <a href="mailto:info@litclub.ua" class="footer-contact-btn">КОНТАКТИ</a>
+        </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <div class="footer-bottom">
+        <div class="footer-social">
+            <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p class="footer-copy">
+            © 2025 LitClub. 
+        </p>
+    </div>
+
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Повернутися вгору">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+</footer>
+
+<script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.classList.add('scroll-top--visible');
+        else scrollBtn.classList.remove('scroll-top--visible');
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+
+<script src="data.js" defer></script>
+<script src="ui.js" defer></script>
+</body>
+</html>

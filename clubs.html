@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>LitClub — Літературні клуби</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body data-page="clubs">
+<header class="header">
+  <div class="header-left">
+    <div class="logo">
+      <a href="index.html">LitClub</a>
+    </div>
+
+    <div class="header-social">
+      <a href="https://t.me/" target="_blank" aria-label="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Головна</a>
+    <a href="clubs.html" class="nav-link active">Клуби</a>
+    <a href="meeting.html" class="nav-link">Обговорення</a>
+    <a href="profile.html" class="nav-link">Профіль</a>
+    <a href="about.html" class="nav-link">Ми</a>
+  </nav>
+</header>
+
+
+<main class="container">
+    <section class="section">
+        <h1>Літературні клуби</h1>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="search">Пошук за назвою</label>
+                <input type="text" id="search" placeholder="Наприклад, фантастика">
+            </div>
+            <div class="filter-group">
+                <label for="genre-filter">Жанр</label>
+                <select id="genre-filter">
+                    <option value="all">Усі жанри</option>
+                    <!-- Додаткові жанри JS додасть автоматично -->
+                </select>
+            </div>
+        </div>
+
+        <div id="clubs-list" class="grid grid-3">
+    <!-- Клуби рендеряться через JS -->
+        </div>
+
+
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="footer-logo">LitClub</div>
+            <nav class="footer-nav">
+                <a href="index.html">Головна</a>
+                <a href="clubs.html">Клуби</a>
+                <a href="meeting.html">Обговорення</a>
+                <a href="about.html">Про платформу</a>
+            </nav>
+        </div>
+
+        <div class="footer-right">
+            <a href="mailto:info@litclub.ua" class="footer-contact-btn">КОНТАКТИ</a>
+        </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <div class="footer-bottom">
+        <div class="footer-social">
+            <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p class="footer-copy">
+            © 2025 LitClub. 
+        </p>
+    </div>
+
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Повернутися вгору">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+</footer>
+
+<script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.classList.add('scroll-top--visible');
+        else scrollBtn.classList.remove('scroll-top--visible');
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+
+<script src="data.js" defer></script>
+<script src="ui.js" defer></script>
+</body>
+</html>

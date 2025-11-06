@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>LitClub — Обговорення книги</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body data-page="meeting">
+<header class="header">
+  <div class="header-left">
+    <div class="logo">
+      <a href="index.html">LitClub</a>
+    </div>
+
+    <div class="header-social">
+      <a href="https://t.me/" target="_blank" aria-label="Telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Головна</a>
+    <a href="clubs.html" class="nav-link">Клуби</a>
+    <a href="meeting.html" class="nav-link active">Обговорення</a>
+    <a href="profile.html" class="nav-link">Профіль</a>
+    <a href="about.html" class="nav-link">Про платформу</a>
+  </nav>
+</header>
+
+<main class="container container-wide">
+  <section class="section">
+    <div class="meeting-header card">
+      <div class="meeting-info">
+        <h1><i class="fa-solid fa-book-open-reader"></i> Обговорення книги «451° за Фаренгейтом»</h1>
+        <p class="meeting-meta">
+          <span>Клуб: <strong>Фантастика &amp; Sci-Fi</strong></span> |
+          <span>Дата: <strong>10 листопада 2025</strong></span> |
+          <span>Початок: <strong>19:00</strong></span>
+        </p>
+        <p class="meeting-desc">
+          📚 У цьому обговоренні учасники дискутують про світ, де книги заборонені,
+          і про те, чому знання — це свобода.
+        </p>
+      </div>
+    </div>
+
+    <div class="layout-2">
+      <!-- ЛІВА ЧАСТИНА: ЧАТ -->
+      <div class="chat chat-modern">
+        <!-- Верхня панель: закріплені + тема + таймер -->
+        <div class="chat-top">
+          <div class="pinned-block" id="pinned-block">
+            <div class="pinned-header">
+              <i class="fa-solid fa-thumbtack"></i>
+              <span>Закріплені повідомлення</span>
+            </div>
+            <div class="pinned-list" id="pinned-list">
+              <p class="pinned-empty">Наразі немає закріплених повідомлень.</p>
+            </div>
+          </div>
+
+          <div class="discussion-topbar">
+            <div class="discussion-topic">
+              <span class="topic-label">Поточна тема:</span>
+              <span id="current-topic" class="topic-text">
+                Чи може знання бути небезпечним?
+              </span>
+              <button id="edit-topic-btn" class="btn btn-small btn-outline topic-edit-btn">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+            </div>
+            <div class="discussion-timer">
+              <span class="timer-label">До кінця обговорення:</span>
+              <span id="timer-display" class="timer-display">25:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Повідомлення -->
+        <div id="messages" class="chat-messages">
+          <div class="message other" data-id="m1">
+            <div class="message-author">Ірина</div>
+            <div class="message-text">
+              Мені здається, що Бредбері показує, як суспільство саме добровільно відмовляється від знань.
+            </div>
+            <div class="message-footer">
+              <div class="message-time">19:02</div>
+              <div class="message-actions">
+                <button class="reaction-btn" data-reaction="heart">❤️ <span>0</span></button>
+                <button class="reaction-btn" data-reaction="fire">🔥 <span>0</span></button>
+                <button class="reaction-btn" data-reaction="idea">💡 <span>0</span></button>
+                <button class="icon-btn pin-btn" title="Закріпити">
+                  📌
+                </button>
+                <button class="icon-btn quote-btn" title="Цитувати">
+                  ❝
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="message other" data-id="m2">
+            <div class="message-author">Максим</div>
+            <div class="message-text">
+              Так! І головний герой – це людина, що нарешті прокинулася. Вогонь тут не тільки руйнує, а й очищає.
+            </div>
+            <div class="message-footer">
+              <div class="message-time">19:04</div>
+              <div class="message-actions">
+                <button class="reaction-btn" data-reaction="heart">❤️ <span>0</span></button>
+                <button class="reaction-btn" data-reaction="fire">🔥 <span>0</span></button>
+                <button class="reaction-btn" data-reaction="idea">💡 <span>0</span></button>
+                <button class="icon-btn pin-btn" title="Закріпити">
+                  📌
+                </button>
+                <button class="icon-btn quote-btn" title="Цитувати">
+                  ❝
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="message me" data-id="m3">
+            <div class="message-author">Влад Пінчук</div>
+            <div class="message-text">
+              Абсолютно згоден. Це символ пробудження людської свідомості — і боротьби з байдужістю.
+            </div>
+            <div class="message-footer">
+              <div class="message-time">19:05</div>
+              <div class="message-actions">
+                <button class="reaction-btn" data-reaction="heart">❤️ <span>0</span></button>
+                <button class="reaction-btn" data-reaction="fire">🔥 <span>0</span></button>
+                <button class="reaction-btn" data-reaction="idea">💡 <span>0</span></button>
+                <button class="icon-btn pin-btn" title="Закріпити">
+                  📌
+                </button>
+                <button class="icon-btn quote-btn" title="Цитувати">
+                  ❝
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="message other" data-id="m4">
+            <div class="message-author">Олег</div>
+            <div class="message-text">
+              А сцена, де герой запам’ятовує книги — одна з найсильніших. Вона нагадує, що навіть у темряві є надія.
+            </div>
+            <div class="message-footer">
+              <div class="message-time">19:08</div>
+              <div class="message-actions">
+                <button class="reaction-btn" data-reaction="heart">❤️ <span>0</span></button>
+                <button class="reaction-btn" data-reaction="fire">🔥 <span>0</span></button>
+                <button class="reaction-btn" data-reaction="idea">💡 <span>0</span></button>
+                <button class="icon-btn pin-btn" title="Закріпити">
+                  📌
+                </button>
+                <button class="icon-btn quote-btn" title="Цитувати">
+                  ❝
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панель дій (залишимо можливість писати) -->
+        <form id="message-form" class="chat-form">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Напишіть думку про книгу..."
+            autocomplete="off"
+          />
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Надіслати
+          </button>
+        </form>
+      </div>
+
+      <!-- ПРАВА ЧАСТИНА: САЙДБАР -->
+      <aside class="sidebar sidebar-modern">
+        <h2><i class="fa-solid fa-users"></i> Учасники онлайн</h2>
+        <ul class="user-list">
+          <li><span class="user-status"></span> Ірина</li>
+          <li><span class="user-status"></span> Максим</li>
+          <li><span class="user-status"></span> Олег</li>
+          <li><span class="user-status"></span> Влад Пінчук (ви)</li>
+        </ul>
+
+        <div class="discussion-note">
+          <p>
+            💬 Обговорення теми: <strong>«Знання проти контролю»</strong>.<br>
+            Діліться моментами, які найбільше вас вразили.
+          </p>
+        </div>
+
+        <div class="quote-day">
+          <h3>✨ Цитата з книги</h3>
+          <p>
+            «Спалювати книги — це злочин проти пам’яті людства.»
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">LitClub</div>
+      <nav class="footer-nav">
+        <a href="index.html">Головна</a>
+        <a href="clubs.html">Клуби</a>
+        <a href="meeting.html">Обговорення</a>
+        <a href="about.html">Про платформу</a>
+      </nav>
+    </div>
+
+    <div class="footer-right">
+      <a href="mailto:info@litclub.ua" class="footer-contact-btn">КОНТАКТИ</a>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <div class="footer-social">
+      <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <p class="footer-copy">© 2025 LitClub.</p>
+  </div>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Повернутися вгору">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+
+<!-- Скрол вгору -->
+<script>
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) scrollBtn.classList.add('scroll-top--visible');
+    else scrollBtn.classList.remove('scroll-top--visible');
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- ЛОГІКА ТЕМИ, ТАЙМЕРА, РЕАКЦІЙ ТА ЗАКРІПЛЕНЬ -->
+<script>
+(function () {
+  const STORAGE_TOPIC = 'litclub_meeting_topic';
+  const STORAGE_TIMER_END = 'litclub_meeting_timer_end';
+  const STORAGE_PINNED = 'litclub_meeting_pinned';
+  const STORAGE_REACTIONS = 'litclub_meeting_reactions';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const messagesEl = document.getElementById('messages');
+    const topicEl = document.getElementById('current-topic');
+    const editTopicBtn = document.getElementById('edit-topic-btn');
+    const timerDisplay = document.getElementById('timer-display');
+    const pinnedList = document.getElementById('pinned-list');
+    const pinnedBlock = document.getElementById('pinned-block');
+    const messageInput = document.getElementById('message-input');
+    const messageForm = document.getElementById('message-form');
+
+    let timerEnded = false;
+
+    /* ==== ТЕМА ОБГОВОРЕННЯ ==== */
+
+    function loadTopic() {
+      try {
+        const saved = localStorage.getItem(STORAGE_TOPIC);
+        if (saved && topicEl) topicEl.textContent = saved;
+      } catch (e) {}
+    }
+
+    function saveTopic(text) {
+      try {
+        localStorage.setItem(STORAGE_TOPIC, text);
+      } catch (e) {}
+    }
+
+    if (editTopicBtn && topicEl) {
+      editTopicBtn.addEventListener('click', () => {
+        const current = topicEl.textContent.trim();
+        const next = prompt('Введіть нову тему обговорення:', current);
+        if (next && next.trim()) {
+          topicEl.textContent = next.trim();
+          saveTopic(next.trim());
+        }
+      });
+    }
+
+    loadTopic();
+
+    /* ==== ТАЙМЕР ДО КІНЦЯ ОБГОВОРЕННЯ ==== */
+
+    function loadEndTime() {
+      try {
+        const saved = localStorage.getItem(STORAGE_TIMER_END);
+        const now = Date.now();
+        if (saved) {
+          const t = parseInt(saved, 10);
+          if (!isNaN(t) && t > now) return t;
+        }
+      } catch (e) {}
+      // Якщо немає або прострочений — ставимо нові 25 хвилин
+      const end = Date.now() + 25 * 60 * 1000;
+      try {
+        localStorage.setItem(STORAGE_TIMER_END, String(end));
+      } catch (e) {}
+      return end;
+    }
+
+    let endTime = loadEndTime();
+
+    function addSystemMessage(text) {
+      if (!messagesEl) return;
+      const msg = document.createElement('div');
+      msg.classList.add('message', 'system');
+      msg.innerHTML = '<div class="message-text">' + text + '</div>';
+      messagesEl.appendChild(msg);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      const diff = endTime - now;
+      if (!timerDisplay) return;
+
+      if (diff <= 0) {
+        timerDisplay.textContent = '00:00';
+        timerDisplay.classList.add('timer-ended');
+        if (!timerEnded) {
+          timerEnded = true;
+          addSystemMessage('⏰ Обговорення завершено. Ви можете переглянути історію повідомлень.');
+        }
+        return;
+      }
+
+      const totalSec = Math.floor(diff / 1000);
+      const min = String(Math.floor(totalSec / 60)).padStart(2, '0');
+      const sec = String(totalSec % 60).padStart(2, '0');
+      timerDisplay.textContent = min + ':' + sec;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    /* ==== РЕАКЦІЇ ==== */
+
+    let reactions = {};
+    try {
+      const saved = localStorage.getItem(STORAGE_REACTIONS);
+      reactions = saved ? JSON.parse(saved) : {};
+    } catch (e) {
+      reactions = {};
+    }
+
+    function saveReactions() {
+      try {
+        localStorage.setItem(STORAGE_REACTIONS, JSON.stringify(reactions));
+      } catch (e) {}
+    }
+
+    function applyReactions() {
+      const allMessages = messagesEl.querySelectorAll('.message[data-id]');
+      allMessages.forEach(msg => {
+        const id = msg.dataset.id;
+        const btns = msg.querySelectorAll('.reaction-btn');
+        btns.forEach(btn => {
+          const type = btn.dataset.reaction;
+          const span = btn.querySelector('span');
+          const count = reactions[id] && reactions[id][type] ? reactions[id][type] : 0;
+          if (span) span.textContent = count;
+        });
+      });
+    }
+
+    applyReactions();
+
+    messagesEl.addEventListener('click', (e) => {
+      const target = e.target;
+
+      // Реакції
+      if (target.closest('.reaction-btn')) {
+        const btn = target.closest('.reaction-btn');
+        const msg = btn.closest('.message[data-id]');
+        if (!msg) return;
+        const id = msg.dataset.id;
+        const type = btn.dataset.reaction;
+        if (!reactions[id]) reactions[id] = { heart: 0, fire: 0, idea: 0 };
+        reactions[id][type] = (reactions[id][type] || 0) + 1;
+        saveReactions();
+        applyReactions();
+      }
+
+      // Цитування
+      if (target.closest('.quote-btn')) {
+        const msg = target.closest('.message[data-id]');
+        if (!msg || !messageInput) return;
+        const textEl = msg.querySelector('.message-text');
+        const authorEl = msg.querySelector('.message-author');
+        const text = textEl ? textEl.textContent.trim() : '';
+        const author = authorEl ? authorEl.textContent.trim() : 'Учасник';
+        messageInput.value = '«' + text + '» — ' + author + '. ';
+        messageInput.focus();
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+    });
+
+    /* ==== ЗАКРІПЛЕНІ ПОВІДОМЛЕННЯ ==== */
+
+    let pinned = [];
+    try {
+      const savedPinned = localStorage.getItem(STORAGE_PINNED);
+      pinned = savedPinned ? JSON.parse(savedPinned) : [];
+    } catch (e) {
+      pinned = [];
+    }
+
+    function savePinned() {
+      try {
+        localStorage.setItem(STORAGE_PINNED, JSON.stringify(pinned));
+      } catch (e) {}
+    }
+
+    function renderPinned() {
+      if (!pinnedList) return;
+      pinnedList.innerHTML = '';
+      if (!pinned || pinned.length === 0) {
+        const p = document.createElement('p');
+        p.classList.add('pinned-empty');
+        p.textContent = 'Наразі немає закріплених повідомлень.';
+        pinnedList.appendChild(p);
+        return;
+      }
+
+      pinned.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('pinned-item');
+        div.dataset.id = item.id;
+        div.innerHTML = `
+          <div class="pinned-item-text">«${item.text}»</div>
+          <div class="pinned-item-meta">
+            <span>${item.author}</span>
+            <button class="icon-btn unpin-btn" title="Відкріпити">✖</button>
+          </div>
+        `;
+        pinnedList.appendChild(div);
+      });
+    }
+
+    renderPinned();
+
+    messagesEl.addEventListener('click', (e) => {
+      const target = e.target;
+
+      // Закріпити
+      if (target.closest('.pin-btn')) {
+        const msg = target.closest('.message[data-id]');
+        if (!msg) return;
+        const id = msg.dataset.id;
+        const textEl = msg.querySelector('.message-text');
+        const authorEl = msg.querySelector('.message-author');
+        const text = textEl ? textEl.textContent.trim() : '';
+        const author = authorEl ? authorEl.textContent.trim() : 'Учасник';
+
+        if (!pinned.find(p => p.id === id)) {
+          pinned.push({ id, text, author });
+          savePinned();
+          renderPinned();
+          msg.classList.add('message-pinned');
+        }
+      }
+    });
+
+    if (pinnedBlock) {
+      pinnedBlock.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.closest('.unpin-btn')) {
+          const item = target.closest('.pinned-item');
+          if (!item) return;
+          const id = item.dataset.id;
+          pinned = pinned.filter(p => p.id !== id);
+          savePinned();
+          renderPinned();
+          const msg = messagesEl.querySelector('.message[data-id="' + id + '"]');
+          if (msg) msg.classList.remove('message-pinned');
+        }
+      });
+    }
+
+    // Підсвітити вже закріплені
+    pinned.forEach(p => {
+      const msg = messagesEl.querySelector('.message[data-id="' + p.id + '"]');
+      if (msg) msg.classList.add('message-pinned');
+    });
+
+    /* ==== ВІДПРАВКА ПОВІДОМЛЕННЯ (локально) ==== */
+
+    if (messageForm && messageInput && messagesEl) {
+      messageForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = messageInput.value.trim();
+        if (!text) return;
+
+        const id = 'm' + Date.now();
+        const div = document.createElement('div');
+        div.classList.add('message', 'me');
+        div.dataset.id = id;
+        const time = new Date();
+        const timeStr = String(time.getHours()).padStart(2, '0') + ':' +
+                        String(time.getMinutes()).padStart(2, '0');
+
+        div.innerHTML = `
+          <div class="message-author">Влад Пінчук</div>
+          <div class="message-text">${text}</div>
+          <div class="message-footer">
+            <div class="message-time">${timeStr}</div>
+            <div class="message-actions">
+              <button class="reaction-btn" data-reaction="heart">❤️ <span>0</span></button>
+              <button class="reaction-btn" data-reaction="fire">🔥 <span>0</span></button>
+              <button class="reaction-btn" data-reaction="idea">💡 <span>0</span></button>
+              <button class="icon-btn pin-btn" title="Закріпити">📌</button>
+              <button class="icon-btn quote-btn" title="Цитувати">❝</button>
+            </div>
+          </div>
+        `;
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        messageInput.value = '';
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>LitClub — Профіль користувача</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body data-page="profile">
+<header class="header">
+    <div class="header-left">
+        <div class="logo">
+            <a href="index.html">LitClub</a>
+        </div>
+
+        <div class="header-social">
+            <a href="https://t.me/" target="_blank" aria-label="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="clubs.html" class="nav-link">Клуби</a>
+        <a href="meeting.html" class="nav-link">Обговорення</a>
+        <a href="profile.html" class="nav-link active">Профіль</a>
+        <a href="about.html" class="nav-link">Про платформу</a>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="section profile-wrapper">
+        <!-- ШАПКА ПРОФІЛЮ -->
+        <div class="profile-header card">
+            <div class="avatar large">
+                <img src="https://i.pinimg.com/736x/1d/77/2e/1d772e86e9b2a86ad5a46c61b6ad75ab.jpg" alt="">
+            </div>
+            <div class="profile-info">
+                <h1>Влад Пінчук</h1>
+                <p class="quote profile-quote-text">
+                    «Книга — це дзеркало: якщо у неї дивиться осел, не чекай, що в ній побачиш ангела.»
+                </p>
+                <p class="bio profile-bio-text">
+                    Захоплююсь сучасною українською літературою, нон-фікшн та філософськими есеями.
+                    Люблю відкривати нових авторів і обговорювати прочитане в теплій компанії однодумців.
+                </p>
+
+                <p class="profile-genres">
+                    Улюблені жанри:
+                    <span class="profile-genres-text">Фантастика, нон-фікшн, класика</span>
+                </p>
+
+                <div class="profile-stats">
+                    <div><strong id="stat-read">4</strong><span>книги прочитано</span></div>
+                    <div><strong id="stat-fav">3</strong><span>улюблені книги</span></div>
+                    <div><strong>3</strong><span>клуби</span></div>
+                </div>
+
+                <button class="btn btn-outline profile-edit-btn" id="openProfileEdit">
+                    <i class="fa-solid fa-pen"></i> Редагувати профіль
+                </button>
+            </div>
+        </div>
+
+        <!-- ЦІЛЬ ЧИТАННЯ -->
+        <section class="card reading-goal">
+            <h2><i class="fa-solid fa-bullseye"></i> Моя ціль читання</h2>
+            <p class="reading-goal-text">
+                Встановіть, скільки книг хочете прочитати цього року.
+            </p>
+            <div class="reading-goal-controls">
+                <label for="goal-input">Ціль (книг на рік):</label>
+                <input type="number" id="goal-input" min="1" max="200" value="20">
+                <button class="btn btn-small" id="save-goal-btn">Зберегти</button>
+            </div>
+            <div class="reading-goal-progress">
+                <div class="goal-progress-bar">
+                    <div class="goal-progress-fill" id="goal-progress-fill"></div>
+                </div>
+                <p class="reading-goal-status">
+                    <span id="goal-read-count">4</span> / <span id="goal-total">20</span> книг
+                    (<span id="goal-percent">20</span>%)
+                </p>
+            </div>
+        </section>
+
+        <!-- ПОЛИЧКИ КНИГ -->
+        <section class="card shelves">
+            <h2><i class="fa-solid fa-book-open"></i> Мої полички книг</h2>
+
+            <div class="shelf-tabs">
+                <button class="shelf-tab active" data-shelf="read">📖 Прочитані</button>
+                <button class="shelf-tab" data-shelf="favorite">❤️ Улюблені</button>
+                <button class="shelf-tab" data-shelf="planned">📌 Планую прочитати</button>
+            </div>
+
+            <ul class="list shelf-list" id="shelf-list">
+                <!-- Список книг рендериться через JS -->
+            </ul>
+        </section>
+
+        <!-- ІНША ІНФОРМАЦІЯ (КЛУБИ, ОБГОВОРЕННЯ) -->
+        <div class="profile-sections">
+            <section class="card">
+                <h2><i class="fa-solid fa-users"></i> Мої клуби</h2>
+                <ul class="list">
+                    <li>📖 Клуб сучасної прози</li>
+                    <li>🚀 Фантастика & Sci-Fi</li>
+                    <li>✍️ Клуб поезії</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2><i class="fa-solid fa-calendar-days"></i> Найближчі обговорення</h2>
+                <ul class="list">
+                    <li>📅 10 листопада — «451° за Фаренгейтом» у клубі Sci-Fi</li>
+                    <li>📅 15 листопада — «Музей покинутих секретів» у клубі сучасної прози</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2><i class="fa-solid fa-trophy"></i> Досягнення</h2>
+                <ul class="list">
+                    <li>🏆 Перші 5 прочитаних книг</li>
+                    <li>📚 Любитель класики</li>
+                    <li>🚀 Fan Sci-Fi</li>
+                </ul>
+            </section>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="footer-logo">LitClub</div>
+            <nav class="footer-nav">
+                <a href="index.html">Головна</a>
+                <a href="clubs.html">Клуби</a>
+                <a href="meeting.html">Обговорення</a>
+                <a href="about.html">Про платформу</a>
+            </nav>
+        </div>
+
+        <div class="footer-right">
+            <a href="mailto:info@litclub.ua" class="footer-contact-btn">КОНТАКТИ</a>
+        </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <div class="footer-bottom">
+        <div class="footer-social">
+            <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p class="footer-copy">© 2025 LitClub.</p>
+    </div>
+
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Повернутися вгору">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+</footer>
+
+<!-- МОДАЛЬНЕ ВІКНО РЕДАГУВАННЯ ПРОФІЛЮ -->
+<div class="modal" id="profileModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+        <h2>Редагувати профіль</h2>
+        <form id="profileForm">
+            <label for="bio-input">Коротко про себе</label>
+            <textarea id="bio-input" rows="3"></textarea>
+
+            <label for="quote-input">Улюблена цитата</label>
+            <textarea id="quote-input" rows="2"></textarea>
+
+            <label>Улюблені жанри</label>
+            <div class="genres-checkboxes">
+                <label><input type="checkbox" value="Фантастика"> Фантастика</label>
+                <label><input type="checkbox" value="Нон-фікшн"> Нон-фікшн</label>
+                <label><input type="checkbox" value="Класика"> Класика</label>
+                <label><input type="checkbox" value="Поезія"> Поезія</label>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-outline" id="cancelProfileEdit">Скасувати</button>
+                <button type="submit" class="btn btn-primary">Зберегти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="data.js" defer></script>
+<script src="ui.js" defer></script>
+
+<!-- Скрол вгору -->
+<script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.classList.add('scroll-top--visible');
+        else scrollBtn.classList.remove('scroll-top--visible');
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+<!-- ФУНКЦІОНАЛ ПРОФІЛЮ (localStorage, полички, ціль) -->
+<script>
+(function () {
+    const STORAGE_PROFILE = 'litclub_profile_vlad';
+    const STORAGE_GOAL = 'litclub_reading_goal_vlad';
+    const STORAGE_SHELF = 'litclub_active_shelf_vlad';
+
+    const defaultProfile = {
+        bio: 'Захоплююсь сучасною українською літературою, нон-фікшн та філософськими есеями. Люблю відкривати нових авторів і обговорювати прочитане в теплій компанії однодумців.',
+        quote: '«Книга — це дзеркало: якщо у неї дивиться осел, не чекай, що в ній побачиш ангела.»',
+        genres: ['Фантастика', 'нон-фікшн', 'класика']
+    };
+
+    const shelves = {
+        read: [
+            '«Музей покинутих секретів» — Оксана Забужко',
+            '«451° за Фаренгейтом» — Рей Бредбері',
+            '«Літо» — О. М. Пруст',
+            '«Майстер і Маргарита» — М. Булгаков'
+        ],
+        favorite: [
+            '«Сто років самотності» — Г. Ґ. Маркес',
+            '«Місто» — Валер’ян Підмогильний',
+            '«Портрет Доріана Грея» — О. Вайльд'
+        ],
+        planned: [
+            '«Три товариші» — Е. М. Ремарк',
+            '«Мовчання ягнят» — т. Гарріс'
+        ]
+    };
+
+    function loadProfile() {
+        try {
+            const saved = localStorage.getItem(STORAGE_PROFILE);
+            return saved ? JSON.parse(saved) : defaultProfile;
+        } catch (e) {
+            return defaultProfile;
+        }
+    }
+
+    function saveProfile(profile) {
+        try {
+            localStorage.setItem(STORAGE_PROFILE, JSON.stringify(profile));
+        } catch (e) {}
+    }
+
+    function loadGoal() {
+        try {
+            const saved = localStorage.getItem(STORAGE_GOAL);
+            return saved ? parseInt(saved, 10) || 20 : 20;
+        } catch (e) {
+            return 20;
+        }
+    }
+
+    function saveGoal(goal) {
+        try {
+            localStorage.setItem(STORAGE_GOAL, String(goal));
+        } catch (e) {}
+    }
+
+    function loadActiveShelf() {
+        try {
+            return localStorage.getItem(STORAGE_SHELF) || 'read';
+        } catch (e) {
+            return 'read';
+        }
+    }
+
+    function saveActiveShelf(shelf) {
+        try {
+            localStorage.setItem(STORAGE_SHELF, shelf);
+        } catch (e) {}
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const profile = loadProfile();
+        const bioEl = document.querySelector('.profile-bio-text');
+        const quoteEl = document.querySelector('.profile-quote-text');
+        const genresEl = document.querySelector('.profile-genres-text');
+
+        if (bioEl) bioEl.textContent = profile.bio;
+        if (quoteEl) quoteEl.textContent = profile.quote;
+        if (genresEl) genresEl.textContent = profile.genres.join(', ');
+
+        // Статистика
+        const readCount = shelves.read.length;
+        const favCount = shelves.favorite.length;
+        const statRead = document.getElementById('stat-read');
+        const statFav = document.getElementById('stat-fav');
+        if (statRead) statRead.textContent = readCount;
+        if (statFav) statFav.textContent = favCount;
+
+        // Ціль читання
+        const goalInput = document.getElementById('goal-input');
+        const goalFill = document.getElementById('goal-progress-fill');
+        const goalReadSpan = document.getElementById('goal-read-count');
+        const goalTotalSpan = document.getElementById('goal-total');
+        const goalPercentSpan = document.getElementById('goal-percent');
+        const saveGoalBtn = document.getElementById('save-goal-btn');
+
+        let goal = loadGoal();
+        if (goalInput) goalInput.value = goal;
+        if (goalTotalSpan) goalTotalSpan.textContent = goal;
+        if (goalReadSpan) goalReadSpan.textContent = readCount;
+
+        function updateGoalProgress() {
+            const percent = Math.min(100, Math.round((readCount / goal) * 100));
+            if (goalPercentSpan) goalPercentSpan.textContent = percent;
+            if (goalFill) goalFill.style.width = percent + '%';
+        }
+        updateGoalProgress();
+
+        if (saveGoalBtn && goalInput) {
+            saveGoalBtn.addEventListener('click', () => {
+                const val = parseInt(goalInput.value, 10);
+                if (!isNaN(val) && val > 0) {
+                    goal = val;
+                    if (goalTotalSpan) goalTotalSpan.textContent = goal;
+                    saveGoal(goal);
+                    updateGoalProgress();
+                }
+            });
+        }
+
+        // Полички
+        const shelfList = document.getElementById('shelf-list');
+        const shelfTabs = document.querySelectorAll('.shelf-tab');
+
+        function renderShelf(type) {
+            if (!shelfList) return;
+            shelfList.innerHTML = '';
+            (shelves[type] || []).forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                shelfList.appendChild(li);
+            });
+        }
+
+        let activeShelf = loadActiveShelf();
+        renderShelf(activeShelf);
+        shelfTabs.forEach(btn => {
+            if (btn.dataset.shelf === activeShelf) {
+                btn.classList.add('active');
+            }
+            btn.addEventListener('click', () => {
+                shelfTabs.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeShelf = btn.dataset.shelf;
+                saveActiveShelf(activeShelf);
+                renderShelf(activeShelf);
+            });
+        });
+
+        // Модальне вікно редагування
+        const modal = document.getElementById('profileModal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const openBtn = document.getElementById('openProfileEdit');
+        const cancelBtn = document.getElementById('cancelProfileEdit');
+        const form = document.getElementById('profileForm');
+        const bioInput = document.getElementById('bio-input');
+        const quoteInput = document.getElementById('quote-input');
+        const genreCheckboxes = document.querySelectorAll('.genres-checkboxes input[type="checkbox"]');
+
+        function openModal() {
+            if (!modal) return;
+            modal.classList.add('modal--open');
+            if (bioInput) bioInput.value = profile.bio;
+            if (quoteInput) quoteInput.value = profile.quote;
+            genreCheckboxes.forEach(cb => {
+                cb.checked = profile.genres.includes(cb.value);
+            });
+        }
+
+        function closeModal() {
+            if (!modal) return;
+            modal.classList.remove('modal--open');
+        }
+
+        if (openBtn) openBtn.addEventListener('click', openModal);
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newBio = bioInput.value.trim() || defaultProfile.bio;
+                const newQuote = quoteInput.value.trim() || defaultProfile.quote;
+                const newGenres = [];
+                genreCheckboxes.forEach(cb => {
+                    if (cb.checked) newGenres.push(cb.value);
+                });
+
+                profile.bio = newBio;
+                profile.quote = newQuote;
+                profile.genres = newGenres.length ? newGenres : defaultProfile.genres;
+
+                if (bioEl) bioEl.textContent = profile.bio;
+                if (quoteEl) quoteEl.textContent = profile.quote;
+                if (genresEl) genresEl.textContent = profile.genres.join(', ');
+
+                saveProfile(profile);
+                closeModal();
+            });
+        }
+    });
+})();
+</script>
+</body>
+</html>
